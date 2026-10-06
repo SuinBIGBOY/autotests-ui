@@ -4,16 +4,47 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        h3 {
+            font-size: 15px
+        }
         .h2-text {
             color: red
+        }
+        .h3-text {
+            color: blue;
+        }
+        #h1-text {
+            font-size: 50px
+        }
+        div.Java > a {
+            color: red;
+        }
+        ul li {
+            color: yellow;
+        }
+        input[type="text"] {
+            background-color: blue;
+        }
+         input[type="text"]:hover {
+            background-color: gray;
+        }
+        a:hover {
+            color: red;
+        }
+        li::marker {
+            color: red
+        }
+        ul li:nth-child(2) {
+            color: blue
         }
     </style>
 </head>
 <body>
-<div>
+<div class="python">
     <h1 id="h1-text">h1 text</h1>
+    <h1>h1 text 2</h1>
     <h2 class="h2-text">h2 text</h2>
-    <h3 class="h2-text">h3 text</h3>
+    <h3 class="h2-text h3-text">h3 text</h3>
     <p>Token-efficient browser automation for coding agents like Claude Code and
         <span style="color: green">GitHub Copilot</span>.
         Skill-based workflows
@@ -78,6 +109,10 @@
             </tbody>
         </table>
     </form>
+</div>
+<div class="Java">
+    <h2 class="h2-text">h2 text</h2>
+    <a href="https://translate.google.com/?hl=ru&sl=en&tl=ru&op=translate/" target="_blank">Java</a>
 </div>
 </body>
 </html>
