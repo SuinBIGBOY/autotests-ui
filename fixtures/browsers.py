@@ -9,8 +9,9 @@ def chromium_page(playwright: Playwright) -> Generator[Page, None, None]:
     yield browser.new_page()
     browser.close()
 
+
 @pytest.fixture(scope="session")
-def initialize_browser_state(playwright: Playwright) :
+def initialize_browser_state(playwright: Playwright):
     browser = playwright.chromium.launch(headless=False)
     context = browser.new_context()
     page = context.new_page()
@@ -31,7 +32,8 @@ def initialize_browser_state(playwright: Playwright) :
 
     context.storage_state(path='browser-state.json')
     browser.close()
-    
+
+
 @pytest.fixture
 def chromium_page_with_state(
         initialize_browser_state,
