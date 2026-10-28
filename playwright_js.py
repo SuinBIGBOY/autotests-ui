@@ -6,8 +6,7 @@ with sync_playwright() as playwright:
     page = browser.new_page()
 
     page.goto(
-        "https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration",
-        wait_until='networkidle'
+        "https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration"
         )
 
     email_input = page.get_by_test_id('registration-form-email-input').locator('input')
