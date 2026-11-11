@@ -3,6 +3,7 @@ from components.courses.create_course_exercises_toolbar_view_component import Cr
 from components.courses.create_course_form_component import CreateCourseFormComponent
 from components.courses.create_course_toolbar_view_component import CreateCourseToolbarViewComponent
 from components.navigation.navbar_component import NavbarComponent
+from components.navigation.sidebar_component import SidebarComponent
 from pages.base_page import BasePage
 from playwright.sync_api import Page
 from components.views.empty_view_component import EmptyViewComponent
@@ -14,10 +15,11 @@ class CreateCoursePage(BasePage):
         super().__init__(page)
 
         self.navbar = NavbarComponent(page)
+        self.sidebar = SidebarComponent(page)
+        self.create_course_form = CreateCourseFormComponent(page)
         self.create_course_exercise_form = CreateCourseExerciseFormComponent(page)
         self.image_upload_widget = ImageUploadWidgetComponent(page, "create-course-preview")
         self.exercises_empty_view = EmptyViewComponent(page, "create-course-exercises")
-        self.create_course_form = CreateCourseFormComponent(page)
         self.create_course_toolbar_view = CreateCourseToolbarViewComponent(page)
         self.create_course_exercises_toolbar_view = CreateCourseExercisesToolbarViewComponent(page)
 
