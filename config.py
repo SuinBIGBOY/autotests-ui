@@ -30,6 +30,7 @@ class Settings(BaseSettings):
     test_user: TestUser
     test_data: TestData
     videos_dir: DirectoryPath
+    allure_results_dir: DirectoryPath
     tracing_dir: DirectoryPath
     browser_state_file: FilePath
 
@@ -41,7 +42,9 @@ class Settings(BaseSettings):
         videos_dir = Path("./videos")
         tracing_dir = Path("./tracing")
         browser_state_file = Path("browser-state.json")
+        allure_results_dir = Path("./allure-results")
 
+        allure_results_dir.mkdir(exist_ok=True)
         videos_dir.mkdir(exist_ok=True)
         tracing_dir.mkdir(exist_ok=True)
         browser_state_file.touch(exist_ok=True)
@@ -50,6 +53,7 @@ class Settings(BaseSettings):
         return cls(
             videos_dir=videos_dir,
             tracing_dir=tracing_dir,
+            allure_results_dir=allure_results_dir,
             browser_state_file=browser_state_file,
         )
 
