@@ -23,6 +23,7 @@ def initialize_playwright_page(
     yield page
 
     context.tracing.stop(path=settings.tracing_dir.joinpath(f"{test_name}.zip"))
+    context.close()
     browser.close()
 
     allure.attach.file(settings.tracing_dir.joinpath(f"{test_name}.zip"), name="trace", extension="zip")
