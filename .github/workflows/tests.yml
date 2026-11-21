@@ -28,6 +28,14 @@ jobs:
           playwright install --with-deps
 
       - name: Run Playwright tests with pytest and generate Allure results
+        env:
+          APP_URL: ${{ vars.APP_URL }}
+          HEADLESS: ${{ vars.HEADLESS }}
+          BROWSERS: ${{ vars.BROWSERS }}
+          TEST_USER.EMAIL: ${{ secrets.TEST_USER_EMAIL }}
+          TEST_USER.USERNAME: ${{ secrets.TEST_USER_USERNAME }}
+          TEST_USER.PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
+          TEST_DATA.IMAGE_PNG_FILE: ${{ vars.TEST_DATA_IMAGE_PNG_FILE }}
         run: |
           pytest -m regression --alluredir=./allure-results --numprocesses=3
 
